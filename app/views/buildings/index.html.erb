@@ -1,0 +1,47 @@
+
+<div id="header">
+  <h1>Listing buildings</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Height</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @buildings.each do |building| %>
+      <tr>
+        <td><%= building.name %></td>
+        <td><%= building.height %></td>
+        <td><%= link_to 'Show', building %></td>
+        <td><%= link_to 'Edit', edit_building_path(building) %></td>
+        <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br />
+  <%= link_to 'New Building', new_building_path %>
+
+</div>
+
+<div id="wrapper">
+
+  <% @buildings.each do |building| %>
+    <div class="buildingname">
+
+      <div class="building" style="height: <%= building.height %>px">
+      <%= building.height %>
+      </div>
+
+      <p><%=building.name %></p>
+
+    </div>
+  <% end %>
+</div>
