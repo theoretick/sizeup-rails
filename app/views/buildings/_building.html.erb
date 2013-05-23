@@ -2,8 +2,8 @@
 <div class="buildingname">
   <!-- building graphic height generator -->
 
-    <div class="building" style="height: <%= (building.height * @adjusted_height) - 90 %>px">
-    <%= (building.height * @adjusted_height) %>
+    <div class="building" style="height: <%= building.height * @adjusted_height %>px">
+    <%= building.height %>
    </div>
 
     <p><%=building.name %></p>

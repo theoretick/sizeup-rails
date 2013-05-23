@@ -6,7 +6,8 @@ class BuildingsController < ApplicationController
   def index
     @buildings = Building.all
     heights = Array.new
-    viewport_height = 778
+    # minus 90px for border-top plus building footer name
+    viewport_height = 778 - 90
 
     @buildings.each do |struct|
       heights.push(struct[:height])
@@ -14,7 +15,7 @@ class BuildingsController < ApplicationController
 
     tallest_building = heights.max.to_f
 
-    @adjusted_height = viewport_height / tallest_building
+    @adjusted_height = (viewport_height / tallest_building)
   end
 
   # GET /buildings/1

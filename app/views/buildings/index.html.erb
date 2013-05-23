@@ -1,36 +1,38 @@
 
-<div id="header">
-  <h1>Listing buildings</h1>
+<div id="container">
+  <div id="header">
+    <h1>Listing buildings</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Height</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Height</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <% @buildings.each do |building| %>
-      <tr>
-        <td><%= building.name %></td>
-        <td><%= building.height %></td>
-        <td><%= link_to 'Show', building %></td>
-        <td><%= link_to 'Edit', edit_building_path(building) %></td>
-        <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+      <tbody>
+        <% @buildings.each do |building| %>
+        <tr>
+          <td><%= building.name %></td>
+          <td><%= building.height %></td>
+          <td><%= link_to 'Show', building %></td>
+          <td><%= link_to 'Edit', edit_building_path(building) %></td>
+          <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <br />
-  <%= link_to 'New Building', new_building_path %>
+    <br />
+    <%= link_to 'New Building', new_building_path %>
 
-</div>
+  </div><!-- end of header div -->
 
-<div id="wrapper">
- <%= render partial: 'building', collection: @buildings %>
-</div>
+  <div id="wrapper">
+   <%= render partial: 'building', collection: @buildings %>
+  </div>
+</div><!-- end of container div -->
