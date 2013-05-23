@@ -32,16 +32,5 @@
 </div>
 
 <div id="wrapper">
-
-  <% @buildings.each do |building| %>
-    <div class="buildingname">
-
-      <div class="building" style="height: <%= building.height %>px">
-      <%= building.height %>
-      </div>
-
-      <p><%=building.name %></p>
-
-    </div>
-  <% end %>
+ <%= render partial: 'building', collection: @buildings %>
 </div>

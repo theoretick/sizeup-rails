@@ -5,6 +5,16 @@ class BuildingsController < ApplicationController
   # GET /buildings.json
   def index
     @buildings = Building.all
+    heights = Array.new
+    viewport_height = 778
+
+    @buildings.each do |struct|
+      heights.push(struct[:height])
+    end
+
+    tallest_building = heights.max.to_f
+
+    @adjusted_height = viewport_height / tallest_building
   end
 
   # GET /buildings/1

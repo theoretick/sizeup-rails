@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .building {
   width: 40px;
   border: 1px black solid;
@@ -18,10 +19,21 @@
   border: 2px red solid;
 }
 
+.buildingname p {
+
+}
+
 #wrapper {
   display: inline-block;
   vertical-align: bottom;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   border: 3px dashed purple;
   text-align: center;
+}
+
+#header {
+  padding-left: 10px;
+  position: absolute;
+  z-index: 10;
 }

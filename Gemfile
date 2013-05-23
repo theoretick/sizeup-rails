@@ -36,3 +36,9 @@ gem 'jbuilder', '~> 1.0.1'
 
 # To use debugger
 # gem 'debugger'
+#
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
