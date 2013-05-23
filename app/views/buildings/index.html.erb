@@ -33,6 +33,6 @@
   </div><!-- end of header div -->
 
   <div id="wrapper">
-   <%= render partial: 'building', collection: @buildings %>
+   <%= render partial: 'building', collection: @buildings.order("height") %>
   </div>
 </div><!-- end of container div -->

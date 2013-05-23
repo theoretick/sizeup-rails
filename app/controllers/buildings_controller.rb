@@ -6,6 +6,7 @@ class BuildingsController < ApplicationController
   def index
     @buildings = Building.all
     heights = Array.new
+
     # minus 90px for border-top plus building footer name
     viewport_height = 778 - 90
 
