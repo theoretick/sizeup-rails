@@ -17,6 +17,7 @@ class BuildingsController < ApplicationController
     tallest_building = heights.max.to_f
 
     @adjusted_height = (viewport_height / tallest_building)
+
   end
 
   # GET /buildings/1
@@ -81,6 +82,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:name, :height)
+      params.require(:building).permit(:name, :height, :city_id)
     end
 end
