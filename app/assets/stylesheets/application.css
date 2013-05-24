@@ -12,7 +12,12 @@
  *= require_tree .
  */
 body {
-  height: 95%;
-  border: 1px black solid;
+  width: 96%;
+  height: 96%;
   position: relative;
+  margin: 5 auto;
+  background-image: url('grass-border.svg');
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 15%;
 }

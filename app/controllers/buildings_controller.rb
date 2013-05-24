@@ -8,7 +8,7 @@ class BuildingsController < ApplicationController
     heights = Array.new
 
     # minus 90px for border-top plus building footer name
-    viewport_height = 778 - 90
+    viewport_height = 778 - 130
 
     @buildings.each do |struct|
       heights.push(struct[:height])
