@@ -24,6 +24,7 @@
           <td><%= building.name %></td>
           <td><%= building.height %></td>
           <td><%= building.city_id %></td>
+          <td><%= @cities.find(id=building.city_id) %></td>
           <td><%= link_to 'Show', building %></td>
           <td><%= link_to 'Edit', edit_building_path(building) %></td>
           <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
