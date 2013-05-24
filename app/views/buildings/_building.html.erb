@@ -1,7 +1,8 @@
   <!-- building graphic height generator -->
 <section class="building">
-    <div class="building_bar" style="height: <%= building.height * @adjusted_height %>px">
-    <%= building.height %>
-    </div>
     <p><%=building.name %></p>
+    <div class="building_bar" style="height: <%= building.height * @adjusted_height %>px">
+
+      <p><%= building.height %></p>
+    </div>
 </section>
