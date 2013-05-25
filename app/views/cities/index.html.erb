@@ -17,7 +17,13 @@
     <tr>
       <td><%= city.name %></td>
       <td><%= city.country %></td>
-      <td><%= city.buildings.first.inspect %></td>
+
+      <td>
+        <% city.buildings.each do |building| %>
+          <%= building.name %><br />
+        <% end %>
+      </td>
+
       <td><%= link_to 'Show', city %></td>
       <td><%= link_to 'Edit', edit_city_path(city) %></td>
       <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
