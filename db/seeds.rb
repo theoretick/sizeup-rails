@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+cities = [{name: 'Portland', country: 'USA'},
+	      {name: 'London', country: 'England'},
+	      {name: 'Seattle', country: 'USA'},
+	      {name: 'New York', country: 'USA'},
+	      {name: 'Paris', country: 'France'}]
+
+cities.each do |city|
+	City.create!(city)
+end
