@@ -21,3 +21,16 @@ body {
   background-repeat: repeat-x;
   background-size: 15%;
 }
+
+* {
+  font-family: Futura, sans-serif;
+  line-height: 150%;
+}
+
+td {
+  padding: 5px;
+}
+
+thead {
+  border-bottom: 1px black solid;
+}
