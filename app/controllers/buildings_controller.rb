@@ -18,7 +18,7 @@ class BuildingsController < ApplicationController
     tallest_building = heights.max.to_f
 
     @adjusted_height = (viewport_height / tallest_building)
-    
+
     @cities = City.all
 
   end
