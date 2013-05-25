@@ -16,8 +16,6 @@ body {
   height: 96%;
   position: relative;
   margin: 5 auto;
-  font-family: Helvetica, sans-serif;
-  font-size: 200%;
   background-image: url('grass-border.svg');
   background-position: bottom;
   background-repeat: repeat-x;

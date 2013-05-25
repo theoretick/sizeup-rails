@@ -80,6 +80,22 @@ table {
   text-align: center;
 }
 
+
+// section class for each building bar + name
+.building {
+  vertical-align: bottom;
+  display: inline-block;
+  min-width: 80px;
+  // border: 2px darkred solid;
+
+  // p element for building name
+  > p {
+   font-family: Futura, sans-serif;
+   color: darkred;
+   font-size: 120%;
+ }
+}
+
 // class for styling individual building bar graphics
 .building_bar {
   width: 40px;
@@ -93,8 +109,8 @@ table {
   &:hover {
     background-color: black;
   }
-  // p element for building height
-  aside {  
+  // element for building height
+  aside {
     position: absolute;
     width: 40px;
     min-height: 15px;
@@ -103,18 +119,3 @@ table {
     //border: 2px solid black;
   }
 }
-
-// wrapper class for building bar and each building name
-.building {
-  vertical-align: bottom;
-  display: inline-block;
-  min-width: 80px;
-  border: 2px red solid;
-  // p element for building name
-  > p {
-   font-family: Helvetica, sans-serif;
-   color: red;
-   font-size: 120%;
- }
-}
-
