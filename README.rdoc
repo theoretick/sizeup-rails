@@ -1,4 +1,4 @@
-== README
+== SizeUp
 
 Basic rails app that Takes buildings in cities and displays them graphically.
 
