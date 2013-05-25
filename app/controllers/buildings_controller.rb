@@ -40,7 +40,7 @@ class BuildingsController < ApplicationController
   # POST /buildings
   # POST /buildings.json
   def create
-    @building = Building.new(building_params.inspect)
+    @building = Building.new(building_params)
 
     respond_to do |format|
       if @building.save
