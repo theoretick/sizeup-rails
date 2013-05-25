@@ -18,6 +18,8 @@ class BuildingsController < ApplicationController
     tallest_building = heights.max.to_f
 
     @adjusted_height = (viewport_height / tallest_building)
+    
+    @cities = City.all
 
   end
 
@@ -38,7 +40,7 @@ class BuildingsController < ApplicationController
   # POST /buildings
   # POST /buildings.json
   def create
-    @building = Building.new(building_params)
+    @building = Building.new(building_params.inspect)
 
     respond_to do |format|
       if @building.save
