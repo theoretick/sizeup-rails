@@ -18,11 +18,18 @@
   <div class="field">
     <%= f.label :height %><br />
     <%= f.number_field :height %>
-  </div>
-  <div class="field">
-    <%= f.label :city_id %><br />
-    <%= f.number_field :city_id %>
-  </div>
+  </div>  
+  
+  
+
+  <% City.all.each do |city| %>
+    <div class="checkboxform">
+        <%= radio_button_tag "building[city_id]", city.id, city.id == @building.city_id %>
+        <label><%= city.name %></label>
+    </div>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
