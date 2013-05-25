@@ -22,7 +22,7 @@
 
 
 
-  <% City.all.each do |city| %>
+  <% @cities.each do |city| %>
     <div class="checkboxform">
         <%= radio_button_tag "building[city_id]", city.id, city.id == @building.city_id %>
         <label><%= city.name %></label>

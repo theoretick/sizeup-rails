@@ -19,8 +19,6 @@ class BuildingsController < ApplicationController
 
     @adjusted_height = (viewport_height / tallest_building)
 
-    @cities = City.all
-
   end
 
   # GET /buildings/1
