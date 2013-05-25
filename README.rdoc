@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Basic rails app that Takes buildings in cities and displays them graphically.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Cities have many buildings.
+Buildings belong to one city.
+Buildings have a name and height.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+TODO
+---
+ * distance to Graceland
+ * Add windows
+ * Add Gargoyles
+ * Make stupid window size responsive
