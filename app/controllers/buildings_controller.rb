@@ -1,6 +1,9 @@
 class BuildingsController < ApplicationController
   before_action :set_building, only: [:show, :edit, :update, :destroy]
 
+  #added this to make the :gargoyle accessible
+  
+
   # GET /buildings
   # GET /buildings.json
   def index
@@ -10,17 +13,25 @@ class BuildingsController < ApplicationController
 
     # minus 90px for border-top plus building footer name
     viewport_height = 778 - 130
-
-    @buildings.each do |struct|
-      heights.push(struct[:height])
+    
+    #added a condition to set the gargoyl-ify of the builing if original height is greater than 200
+    
+    @buildings.each do |building|
+      heights.push(building[:height])
     end
-
+   
+    
     tallest_building = heights.max.to_f
 
     @adjusted_height = (viewport_height / tallest_building)
     
     @cities = City.all
+  end
 
+  def gargoyle_ify(building)
+    if building.height >= 300
+      return true
+    end
   end
 
   # GET /buildings/1
@@ -40,7 +51,7 @@ class BuildingsController < ApplicationController
   # POST /buildings
   # POST /buildings.json
   def create
-    @building = Building.new(building_params.inspect)
+    @building = Building.new(building_params)
 
     respond_to do |format|
       if @building.save
@@ -85,6 +96,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:name, :height, :city_id)
+      params.require(:building).permit(:name, :height, :city_id, :gargoyle)
     end
 end
