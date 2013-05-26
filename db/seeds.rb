@@ -14,3 +14,13 @@ cities = [{name: 'Portland', country: 'USA'},
 cities.each do |city|
 	City.create!(city)
 end
+
+buildings = [{name: 'Rose Garden', height: 140, city_id: 1},
+             {name: 'Big Ben', height: 316, city_id: 2},
+             {name: 'Space Needle', height: 604, city_id: 3},
+             {name: 'Empire State Building', height: 1454, city_id: 4},
+             {name: 'Eiffel Tower', height: 1063, city_id: 5}]
+
+buildings.each do |building|
+  Building.create!(building)
+end
