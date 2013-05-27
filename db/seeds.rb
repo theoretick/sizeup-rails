@@ -5,22 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-cities = [{name: 'Portland', country: 'USA'},
-	      {name: 'London', country: 'England'},
-	      {name: 'Seattle', country: 'USA'},
-	      {name: 'New York', country: 'USA'},
-	      {name: 'Paris', country: 'France'}]
+City.delete_all
+Building.delete_all
 
-cities.each do |city|
-	City.create!(city)
-end
+City.create!({name: 'Portland', country: 'USA', id: '1'})
+City.create!({name: 'London', country: 'England', id: '2'})
+City.create!({name: 'Seattle', country: 'USA', id: '3'})
+City.create!({name: 'New York', country: 'USA', id: '4'})
+City.create!({name: 'Paris', country: 'France', id: '5'})
 
-buildings = [{name: 'Rose Garden', height: 140, city_id: 1},
-             {name: 'Big Ben', height: 316, city_id: 2},
-             {name: 'Space Needle', height: 604, city_id: 3},
-             {name: 'Empire State Building', height: 1454, city_id: 4},
-             {name: 'Eiffel Tower', height: 1063, city_id: 5}]
 
-buildings.each do |building|
-  Building.create!(building)
-end
+Building.create!({name: 'Rose Garden', height: 140, city_id: '1'})
+Building.create!({name: 'Big Ben', height: 316, city_id: '2'})
+Building.create!({name: 'Space Needle', height: 604, city_id: '3'})
+Building.create!({name: 'Empire State Building', height: 1454, city_id: '4'})
+Building.create!({name: 'Eiffel Tower', height: 1063, city_id: '5'})
