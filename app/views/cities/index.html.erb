@@ -20,7 +20,7 @@
 
       <td class="buildings">
         <% city.buildings.each do |building| %>
-          - <%= building.name %>
+          - <%= link_to building.name, building_path(building) %>
           <br />
         <% end %>
       </td>
