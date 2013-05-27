@@ -4,11 +4,10 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
+    @buildings = Building.all
     heights = Array.new
     @cities = City.all
-    @buildings = Building.all
 
-    @height = params[:height]
     # minus 90px for border-top plus building footer name
     viewport_height = 778 - 130
 
@@ -20,15 +19,17 @@ class BuildingsController < ApplicationController
 
     @adjusted_height = (viewport_height / tallest_building)
 
-    # Creates a hash with keys and values equal to all boxes being checked in params
-    @city_ids = Hash.new
+    # Creates a hash that matches the params hash with all boxes checked
+    city_ids = Hash.new
     @cities.each do |city|
-      @city_ids["#{city.id}"] = "1"
+      city_ids["#{city.id}"] = "1"
     end
 
-    # Checks all boxes if no params are given or user unchecks all boxes
-    @selected_cities = params[:view] || session[:view] || @city_ids
+    # Defaults all boxes to checked and also makes them all checked if
+    # the user unchecks them all
+    @selected_cities = params[:view] || session[:view] || city_ids
 
+    # Sets @buildings to only those in checked cities
     @buildings = @buildings.where(:city_id => @selected_cities.keys)
    end
 
