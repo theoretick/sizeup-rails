@@ -12,18 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <label>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </label>
   </div>
   <div class="field">
-    <%= f.label :height %><br />
-    <%= f.number_field :height %>
+    <label>
+      <%= f.label :height %><br />
+      <%= f.number_field :height %>
+    </label>
   </div>
 
   <% @cities.each do |city| %>
     <div class="check_boxes"> 
+      <label>
         <%= radio_button_tag "building[city_id]", city.id, city.id == @building.city_id %>
-        <label><%= city.name %></label>
+        <%= city.name %>
+      </label>
     </div>
   <% end %>
 
