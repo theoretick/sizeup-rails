@@ -1,9 +1,10 @@
-  <section id="header">
+<section id="buildingtable"><!--building table section-->
       <section id="links">
-        <div class="header_link"><%= link_to 'New Building', new_building_path %></div>
+        <div class="building_btn"><%= link_to 'New Building', new_building_path %></div>
           <div id="links_divider"></div>
-        <div class="header_link"><%= link_to 'Cities', cities_path %></div>
-      </section>
+        <div class="building_btn"><%= link_to 'Cities', cities_path %></div>
+      </section><!-- end of link buildingtable buttons-->
+
       <div id="city_select">
         <form>
               <% @cities.each do |city| %>
@@ -41,7 +42,8 @@
       </tbody>
     </table>
     <br />
-  </section><!-- end of header div -->
-  <div id="wrapper">
+  </section><!-- end of building table section -->
+
+  <div id="wrapper"><!-- wrapper for building graphics -->
    <%= render partial: 'building', collection: @buildings.order("height") %>
   </div>
