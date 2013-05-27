@@ -1,6 +1,9 @@
   <!-- building graphic height generator -->
 <section class="building">
     <p><%=building.name %></p>
+    <% if controller.gargoyle_ify(building) %>
+    	<div class="gargoyle"></div> 
+    <% end %>	
     <div class="building_bar" style="height: <%= building.height * @adjusted_height %>px">
       <aside><%= building.height %></aside>
     </div>

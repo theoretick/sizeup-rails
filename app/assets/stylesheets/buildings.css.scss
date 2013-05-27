@@ -51,7 +51,7 @@ div.building_btn {
   padding: 20px;
 }
 
-.checkboxes {
+.check_boxes {
   line-height: 2em;
   margin-right: 15px;
 }
@@ -77,12 +77,22 @@ table {
   display: inline-block;
   min-width: 80px;
   // border: 2px darkred solid;
-
   // p element for building name
   > p {
    color: darkred;
    font-size: 120%;
  }
+ .gargoyle {
+  background: url('gargoyle-icon.jpg');
+  background-position: center;
+  position: relative;
+  padding-left: 25px;
+  margin: 0 auto -6px auto;;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  }
 }
 
 // class for styling individual building bar graphics
@@ -99,7 +109,6 @@ table {
   &:hover {
     background-color: black;
   }
-
   // element for building height
   aside {
     position: absolute;

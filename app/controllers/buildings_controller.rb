@@ -33,6 +33,12 @@ class BuildingsController < ApplicationController
     @buildings = @buildings.where(:city_id => @selected_cities.keys)
    end
 
+  def gargoyle_ify(building)
+    if building.height >= 300
+      return true
+    end
+  end
+
   # GET /buildings/1
   # GET /buildings/1.json
   def show
@@ -97,6 +103,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:name, :height, :city_id, :view)
+      params.require(:building).permit(:name, :height, :city_id, :view, :gargoyle)
     end
 end
