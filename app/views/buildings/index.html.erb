@@ -4,9 +4,18 @@
           <div id="links_divider"></div>
         <div class="header_link"><%= link_to 'Cities', cities_path %></div>
       </section>
+      <div id="city_select">
+        <form>
+              <% @cities.each do |city| %>
+                <%= "#{city.name}" %>
+                <%= check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}" %>
+              <% end %>
+              <br>
+              <br>
+              <input type="submit" value="Show Selected Cities!" />
+        </form>
+      </div>
     <section id="link_bottom_divider"></section>
-    <h1>Buildings in:</h1>
-    <h1>CityName</h1>
     <table>
       <thead>
         <tr>
@@ -23,7 +32,7 @@
         <tr>
           <td><%= building.name %></td>
           <td><%= building.height %></td>
-          <td><%= City.find_by_id(building.city_id).name %></td>
+          <td><%= building.city.name %></td>
           <td><%= link_to 'Show', building %></td>
           <td><%= link_to 'Edit', edit_building_path(building) %></td>
           <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,7 +42,6 @@
     </table>
     <br />
   </section><!-- end of header div -->
-
   <div id="wrapper">
    <%= render partial: 'building', collection: @buildings.order("height") %>
   </div>

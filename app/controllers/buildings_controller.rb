@@ -4,10 +4,11 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all
     heights = Array.new
     @cities = City.all
+    @buildings = Building.all
 
+    @height = params[:height]
     # minus 90px for border-top plus building footer name
     viewport_height = 778 - 130
 
@@ -19,6 +20,18 @@ class BuildingsController < ApplicationController
 
     @adjusted_height = (viewport_height / tallest_building)
 
+    @city_ids = Hash.new
+    @cities.each do |city|
+      @city_ids["#{city.id}"] = "1"
+    end
+
+    @selected_cities = params[:view] || session[:view] || @city_ids
+    @buildings = @buildings.where(:city_id => @selected_cities.keys)
+    #@buildings.each do |building|
+     # if @checked_cities.include?(building.city)
+      #   @visible_buildings << building.name
+      #end
+    #end
   end
 
   # GET /buildings/1
@@ -83,6 +96,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:name, :height, :city_id)
+      params.require(:building).permit(:name, :height, :city_id, :view)
     end
 end
