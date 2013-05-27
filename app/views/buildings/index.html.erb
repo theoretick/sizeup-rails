@@ -1,8 +1,7 @@
 <section id="buildingtable"><!--building table section-->
       <section id="links">
-        <div class="building_btn"><%= link_to 'New Building', new_building_path %></div>
-          <div id="links_divider"></div>
-        <div class="building_btn"><%= link_to 'Cities', cities_path %></div>
+        <button class="building_btn"><%= link_to 'New Building', new_building_path %></button>
+        <button class="building_btn"><%= link_to 'Cities', cities_path %></button>
       </section><!-- end of link buildingtable buttons-->
 
       <div id="city_select">
@@ -13,10 +12,10 @@
               <% end %>
               <br>
               <br>
-              <input type="submit" value="Show Selected Cities!" />
+              <input class="building_btn" type="submit" value="Show Selected Cities!" />
         </form>
       </div>
-    <section id="link_bottom_divider"></section>
+
     <table>
       <thead>
         <tr>
