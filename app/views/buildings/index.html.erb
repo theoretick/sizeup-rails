@@ -1,20 +1,22 @@
 <section id="buildingtable"><!--building table section-->
       <section id="links">
         <button class="building_btn"><%= link_to 'New Building', new_building_path %></button>
+        <div class="building_btn"></div>
         <button class="building_btn"><%= link_to 'Cities', cities_path %></button>
       </section><!-- end of link buildingtable buttons-->
 
-      <div id="city_select">
+      <section id="city_select">
+        <br />
         <form>
               <% @cities.each do |city| %>
-                <%= "#{city.name}" %>
+                <label class="checkboxes"><%= "#{city.name}" %>
                 <%= check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}" %>
+                </label>
               <% end %>
-              <br>
               <br>
               <input class="building_btn" type="submit" value="Show Selected Cities!" />
         </form>
-      </div>
+      </section>
 
     <table>
       <thead>
