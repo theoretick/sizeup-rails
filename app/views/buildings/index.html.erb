@@ -45,6 +45,6 @@
     <br />
   </section><!-- end of building table section -->
 
-  <div id="wrapper"><!-- wrapper for building graphics -->
-   <%= render partial: 'building', collection: @buildings.order("height") %>
-  </div>
+<section id="wrapper"><!-- wrapper for building graphics -->
+   <%= render partial: 'buildinggraph', collection: @buildings.order("height") %>
+</section>
