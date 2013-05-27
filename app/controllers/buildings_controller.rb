@@ -41,10 +41,12 @@ class BuildingsController < ApplicationController
   # GET /buildings/new
   def new
     @building = Building.new
+    @cities = City.all
   end
 
   # GET /buildings/1/edit
   def edit
+    @cities = City.all
   end
 
   # POST /buildings
