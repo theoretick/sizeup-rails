@@ -24,14 +24,11 @@
     </label>
   </div>
 
-  <% @cities.each do |city| %>
-    <div class="check_boxes"> 
+    <div class="check_boxes">
       <label>
-        <%= radio_button_tag "building[city_id]", city.id, city.id == @building.city_id %>
-        <%= city.name %>
+        <%= select "building", "city_id", @cities.collect { |c| [ c.name, c.id ] } %>
       </label>
     </div>
-  <% end %>
 
 
   <div class="actions">
