@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @building.name
+%p
+  %strong Height:
+  = @building.height
+%p
+  %strong City:
+  = City.find_by_id(@building.city_id).name
+= link_to 'Edit', edit_building_path(@building)
+|
+\#{link_to 'Back', buildings_path}

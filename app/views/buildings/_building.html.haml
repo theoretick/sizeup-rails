@@ -1,0 +1,7 @@
+/ building graphic height generator
+%section.building
+  %p= building.name
+  - if controller.gargoyle_ify(building)
+    .gargoyle
+  .building_bar{:style => "height: #{building.height * @adjusted_height}px"}
+    %aside= building.height

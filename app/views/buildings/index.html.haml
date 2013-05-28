@@ -1,0 +1,45 @@
+%section#buildingtable
+  / building table section
+  %section#links
+    %button.building_btn= link_to 'New Building', new_building_path
+    .building_btn
+    %button.building_btn= link_to 'Cities', cities_path
+  / end of link buildingtable buttons
+  %section#city_select
+    %br/
+    %form
+      %table
+        - @cities.in_groups_of(4, false).each do |city_by_4|
+          %tr
+            - city_by_4.each do |city|
+              %td
+                %label.checkboxes
+                  = check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}"
+                  = "#{city.name}"
+      %br/
+    %tr
+      %td{:align => "center", :colspan => "4"}
+        %input.building_btn{:type => "submit", :value => "Show Selected Cities!"}/
+  %table
+    %thead
+      %tr
+        %th{:scope => "col"} Name
+        %th{:scope => "col"} Height
+        %th{:scope => "col"} City
+        %th{:scope => "col"}
+        %th{:scope => "col"}
+        %th{:scope => "col"}
+    %tbody
+      - @buildings.each do |building|
+        %tr
+          %td.buildingname= building.name
+          %td= building.height
+          %td= building.city.name
+          %td= link_to 'Show', building
+          %td= link_to 'Edit', edit_building_path(building)
+          %td= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' }
+  %br/
+/ end of building table section
+%section#wrapper
+  / wrapper for building graphics
+  = render partial: 'building', collection: @buildings.order("height")
