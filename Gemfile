@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 1.0.1'
 # Normalize.css is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards.
 gem 'normalize-rails'
 
+# Haml (HTML abstraction markup language) is based on one primary principle: markup should be beautiful.
+gem 'haml-rails', '>=0.3.4', :group => :development
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

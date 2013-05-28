@@ -1,0 +1,26 @@
+= form_for(@building) do |f|
+  - if @building.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@building.errors.count, "error")
+        prohibited this building from being saved:
+      %ul
+        - @building.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    %label
+      = f.label :name
+      %br/
+      = f.text_field :name
+  .field
+    %label
+      = f.label :height
+      %br/
+      = f.number_field :height
+  .check_boxes
+    %label
+      = collection_select :building, :city_id, @cities, :id, :name
+  .city_link
+    = link_to "Create a new city", new_city_path
+  .actions
+    = f.submit
