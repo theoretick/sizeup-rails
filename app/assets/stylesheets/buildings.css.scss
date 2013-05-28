@@ -9,6 +9,7 @@
   background: rgba(192, 192, 192, 0.6);
   margin: 3px;
   position: absolute;
+  top: 0;
   z-index: 10;
   width: 350px;
   box-shadow: 1px 1px 2px 1px dimgrey;
@@ -89,7 +90,7 @@ table {
  }
 
  .gargoyle {
-  background: url('gargoyle-icon.jpg');
+  background: url('gargoyle-icon.png');
   background-position: center;
   position: relative;
   padding-left: 25px;
@@ -123,5 +124,30 @@ table {
     overflow: hidden;
     bottom: 0px;
     //border: 2px solid black;
+  }
+}
+
+#flying_bird {
+    background-image: url('flying_bird.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    z-index: -10;
+    -webkit-animation-name: flying_bird_animation;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-play-state: running;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes flying_bird_animation {
+  0% {
+    -webkit-transform: translate(2000px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(500px, 100px);
+  }
+  100% {
+    -webkit-transform: translate(-100px, 0px);
   }
 }
