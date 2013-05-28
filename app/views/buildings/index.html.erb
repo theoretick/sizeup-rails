@@ -45,7 +45,7 @@
       <tbody>
         <% @buildings.each do |building| %>
         <tr>
-          <td><%= building.name %></td>
+          <td class="buildingname"><%= building.name %></td>
           <td><%= building.height %></td>
           <td><%= building.city.name %></td>
           <td><%= link_to 'Show', building %></td>
