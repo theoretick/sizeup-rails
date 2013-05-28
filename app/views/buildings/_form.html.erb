@@ -26,7 +26,7 @@
 
     <div class="check_boxes">
       <label>
-        <%= select "building", "city_id", @cities.collect { |c| [ c.name, c.id ] } %>
+        <%= collection_select :building, :city_id, @cities, :id, :name %>
       </label>
     </div>
 
