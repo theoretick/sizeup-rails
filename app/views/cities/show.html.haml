@@ -1,0 +1,15 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @city.name
+%p
+  %strong Country:
+  = @city.country
+%p
+  %strong Buildings:
+  - @city.buildings.each do |building|
+    %p
+      = building.name
+  = link_to 'Edit', edit_city_path(@city)
+  |
+  \#{link_to 'Back', cities_path}
