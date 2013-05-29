@@ -22,9 +22,8 @@ class BuildingsController < ApplicationController
     # Creates a hash that matches the params hash with all boxes checked
     city_ids = {}
     @cities.map do |city|
-      city_ids[city.id] = "1"
+      city_ids[city.id.to_s] = 1
     end
-
     # Defaults all boxes to checked and also makes them all checked if
     # the user unchecks them all
     @selected_cities = params[:view] || session[:view] || city_ids
@@ -104,6 +103,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:name, :height, :city_id, :view)
+      params.require(:building).permit(:name, :height, :city_id, :view, :gargoyle)
     end
 end
