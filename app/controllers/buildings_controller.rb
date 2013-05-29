@@ -1,43 +1,34 @@
 class BuildingsController < ApplicationController
   before_action :set_building, only: [:show, :edit, :update, :destroy]
-
   # GET /buildings
   # GET /buildings.json
   def index
     @buildings = Building.all
-    heights = []
     @cities = City.all
+    heights = []
 
     # minus 90px for border-top plus building footer name
     viewport_height = 778 - 130
 
-    @buildings.each do |struct|
-      heights.push(struct[:height])
+    @buildings.each do |building|
+      heights << building[:height]
     end
 
     tallest_building = heights.max.to_f
 
     @adjusted_height = (viewport_height / tallest_building)
 
-    # Creates a hash that matches the params hash with all boxes checked
-    city_ids = {}
-    @cities.map do |city|
-      city_ids[city.id.to_s] = 1
-    end
     # Defaults all boxes to checked and also makes them all checked if
     # the user unchecks them all
-    @selected_cities = params[:view] || session[:view] || city_ids
+    @selected_cities = params[:view] || session[:view] || City.city_id_hash
 
     # Sets @buildings to only those in checked cities
-    @buildings = @buildings.where(:city_id => @selected_cities.keys)
-   end
+    @buildings = @buildings.order("height").where(city_id: @selected_cities.keys)
+  end
 
-   def gargoyle_ify(building)
-     if building.height >= 300
-       return true
-     end
-   end
-
+  def gargoyle_ify(building)
+    building.height >= 300
+  end
 
   # GET /buildings/1
   # GET /buildings/1.json

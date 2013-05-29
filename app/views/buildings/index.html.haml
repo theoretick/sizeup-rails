@@ -20,7 +20,7 @@
       %br
       %tr
         %td{:align => "center", :colspan => "4"}
-          %input.building_btn{:type => "submit", :value => "Show Selected Cities!"}
+          %input.building_btn{type: "submit", value: "Show Selected Cities!"}
     / Checkbox form ends here!
 
   %table
@@ -45,4 +45,4 @@
 / end of building table section
 %section#wrapper
   / wrapper for building graphics
-  = render partial: 'building', collection: @buildings.order("height")
+  = render partial: 'building', collection: @buildings
