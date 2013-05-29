@@ -1,7 +1,10 @@
 Sizeup::Application.routes.draw do
-  resources :buildings
   resources :cities
-
+  # Added the :buildings do loop to respond to the Import Action.  
+  resources :buildings do
+    collection { post :import }
+  end
+   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

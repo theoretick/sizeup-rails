@@ -24,3 +24,16 @@
     = link_to "Create a new city", new_city_path
   .actions
     = f.submit
+
+/section containing csv import method call, This code refactored from CSV Import RailsCast
+/<h2>Import Products</h2>
+/<%= form_tag import_products_path, multipart: true do %>
+/  <%= file_field_tag :file %>
+/  <%= submit_tag "Import" %>
+/<% end %>         
+%h2 Import Buildings 
+= form_tag import_buildings_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"
+/end of section containing CSV import 
+    

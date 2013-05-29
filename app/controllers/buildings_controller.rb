@@ -26,6 +26,13 @@ class BuildingsController < ApplicationController
     @buildings = @buildings.order("height").where(city_id: @selected_cities.keys)
   end
 
+  # Method to handle CSV Imports, from CSV Import RailsCast
+  def import
+    Building.import(params[:file])
+    redirect_to root_url, notice: "Buildings imported."
+  end 
+  
+  # Method to add a gargoyle to the top of your building
   def gargoyle_ify(building)
     building.height >= 300
   end
