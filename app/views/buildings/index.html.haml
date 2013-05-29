@@ -6,7 +6,8 @@
     %button.building_btn= link_to 'Cities', cities_path
   / end of link buildingtable buttons
   %section#city_select
-    %br/
+    %br
+    /Start of checkbox form
     %form
       %table
         - @cities.in_groups_of(4, false).each do |city_by_4|
@@ -15,11 +16,13 @@
               %td
                 %label.checkboxes
                   = check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}"
-                  = "#{city.name}"
-      %br/
-    %tr
-      %td{:align => "center", :colspan => "4"}
-        %input.building_btn{:type => "submit", :value => "Show Selected Cities!"}/
+                  = city.name
+      %br
+      %tr
+        %td{:align => "center", :colspan => "4"}
+          %input.building_btn{:type => "submit", :value => "Show Selected Cities!"}
+    / Checkbox form ends here!
+
   %table
     %thead
       %tr
@@ -38,7 +41,7 @@
           %td= link_to 'Show', building
           %td= link_to 'Edit', edit_building_path(building)
           %td= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' }
-  %br/
+  %br
 / end of building table section
 %section#wrapper
   / wrapper for building graphics
