@@ -82,11 +82,10 @@ table {
   vertical-align: bottom;
   display: inline-block;
   min-width: 80px;
-  // border: 2px darkred solid;
   // p element for building name
   > p {
-   color: darkred;
-   font-size: 120%;
+      color: darkred;
+      font-size: 120%;
  }
 
  .gargoyle {
@@ -114,17 +113,18 @@ table {
   min-height: 15px;
 
   &:hover {
-    background-color: black;
-  }
+          background-color: black;
+          }
+
   // element for building height
   aside {
-    position: absolute;
-    width: 40px;
-    min-height: 15px;
-    overflow: hidden;
-    bottom: 0px;
-    //border: 2px solid black;
-  }
+        position: absolute;
+        width: 40px;
+        min-height: 15px;
+        overflow: hidden;
+        bottom: 0px;
+        //border: 2px solid black;
+        }
 }
 
 #flying_bird {
@@ -142,12 +142,12 @@ table {
 
 @-webkit-keyframes flying_bird_animation {
   0% {
-    -webkit-transform: translate(2000px, 0px);
-  }
+     -webkit-transform: translate(2000px, 0px);
+     }
   50% {
-    -webkit-transform: translate(500px, 100px);
-  }
+      -webkit-transform: translate(500px, 100px);
+      }
   100% {
-    -webkit-transform: translate(-100px, 0px);
-  }
+      -webkit-transform: translate(-100px, 0px);
+      }
 }

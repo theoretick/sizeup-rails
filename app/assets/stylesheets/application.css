@@ -12,6 +12,12 @@
  *= require normalize-rails
  *= require_tree .
  */
+
+* {
+  font-family: Futura, sans-serif;
+  line-height: 150%;
+}
+
 body {
   width: 96%;
   height: 96%;
@@ -21,11 +27,6 @@ body {
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: 15%;
-}
-
-* {
-  font-family: Futura, sans-serif;
-  line-height: 150%;
 }
 
 td {
