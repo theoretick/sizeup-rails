@@ -5,7 +5,7 @@ class BuildingsController < ApplicationController
   # GET /buildings.json
   def index
     @buildings = Building.all
-    heights = Array.new
+    heights = []
     @cities = City.all
 
     # minus 90px for border-top plus building footer name
@@ -20,9 +20,9 @@ class BuildingsController < ApplicationController
     @adjusted_height = (viewport_height / tallest_building)
 
     # Creates a hash that matches the params hash with all boxes checked
-    city_ids = Hash.new
-    @cities.each do |city|
-      city_ids["#{city.id}"] = "1"
+    city_ids = {}
+    @cities.map do |city|
+      city_ids[city.id] = "1"
     end
 
     # Defaults all boxes to checked and also makes them all checked if
@@ -33,11 +33,12 @@ class BuildingsController < ApplicationController
     @buildings = @buildings.where(:city_id => @selected_cities.keys)
    end
 
-  def gargoyle_ify(building)
-    if building.height >= 300
-      return true
-    end
-  end
+   def gargoyle_ify(building)
+     if building.height >= 300
+       return true
+     end
+   end
+
 
   # GET /buildings/1
   # GET /buildings/1.json
@@ -103,6 +104,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:name, :height, :city_id, :view, :gargoyle)
+      params.require(:building).permit(:name, :height, :city_id, :view)
     end
 end
