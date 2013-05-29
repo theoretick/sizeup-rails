@@ -1,15 +1,15 @@
 == SizeUp
 
-Basic rails app that Takes buildings in cities and displays them graphically.
+Basic rails app that takes buildings in cities and displays them graphically.
 
 Cities have many buildings.
 Buildings belong to one city.
-Buildings have a name and height.
+Buildings have a name, city to which they belong, and height.
 
 
 TODO
 ---
  * distance to Graceland
  * Add windows
- * Add Gargoyles
  * Make stupid window size responsive
+ * Add some tests
