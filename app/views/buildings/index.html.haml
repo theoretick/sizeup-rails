@@ -30,16 +30,12 @@
         %th{:scope => "col"} Height
         %th{:scope => "col"} City
         %th{:scope => "col"}
-        %th{:scope => "col"}
-        %th{:scope => "col"}
     %tbody
       - @buildings.each do |building|
         %tr
-          %td.buildingname= building.name
+          %td.buildingname= link_to building.name, building
           %td= building.height
           %td= building.city.name
-          %td= link_to 'Show', building
-          %td= link_to 'Edit', edit_building_path(building)
           %td= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' }
   %br
 / end of building table section
