@@ -7,7 +7,7 @@ class BuildingsController < ApplicationController
     @cities = City.all
     heights = []
 
-    # minus 90px for border-top plus building footer name
+    # minus 130px for border-top plus building footer name
     viewport_height = 778 - 130
 
     @buildings.each do |building|
