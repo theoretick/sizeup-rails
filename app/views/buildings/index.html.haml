@@ -21,20 +21,21 @@
         %input.building_btn{type: "submit", value: "Show Selected Cities!"}
     / Checkbox form ends here!
 
-  %table
-    %thead
-      %tr
-        %th{:scope => "col"} Name
-        %th{:scope => "col"} Height
-        %th{:scope => "col"} City
-        %th{:scope => "col"}
-    %tbody
-      - @buildings.each do |building|
+  %div#table_div
+    %table#buildings_display_table
+      %thead
         %tr
-          %td.buildingname= link_to building.name, building
-          %td= building.height
-          %td= building.city.name
-          %td= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' }
+          %th{:scope => "col"} Name
+          %th{:scope => "col"} Height
+          %th{:scope => "col"} City
+          %th{:scope => "col"}
+      %tbody
+        - @buildings.each do |building|
+          %tr
+            %td.buildingname= link_to building.name, building
+            %td= building.height
+            %td= building.city.name
+            %td= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' }
   %br
 / end of building table section
 %section#wrapper

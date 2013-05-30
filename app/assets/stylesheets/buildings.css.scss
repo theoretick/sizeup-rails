@@ -13,6 +13,8 @@
   z-index: 10;
   width: 400px;
   box-shadow: 1px 1px 2px 1px dimgrey;
+  height: 100%;
+  overflow: visible;
 }
 
 // container menu buttons
@@ -75,13 +77,19 @@ table {
   margin: auto;
 }
 
+#table_div { 
+  overflow: auto;
+  overflow-x: hidden;
+  height: 70%;
+}
+
 #wrapper {
   width: 100%;
+  padding-left: 430px;
   display: inline-block;
   vertical-align: bottom;
   position: absolute;
   bottom: 0;
-  text-align: center;
 }
 
 
@@ -89,6 +97,7 @@ table {
 .building {
   vertical-align: bottom;
   display: inline-block;
+  padding: 0 20 0 20;
   min-width: 80px;
   // p element for building name
   > p {
@@ -143,17 +152,18 @@ table {
     z-index: -10;
     -webkit-animation-name: flying_bird_animation;
     -webkit-animation-duration: 60s;
-    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-iteration-count: 1; 
     -webkit-animation-play-state: running;
     -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes flying_bird_animation {
   0% {
-     -webkit-transform: translate(2000px, 0px);
+     -webkit-transform: translate(6100px, 0px);
      }
   50% {
-      -webkit-transform: translate(500px, 100px);
+      -webkit-transform: translate(2000px, 100px);
       }
   100% {
       -webkit-transform: translate(-100px, 0px);

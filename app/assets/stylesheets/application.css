@@ -19,7 +19,7 @@
 }
 
 body {
-  width: 96%;
+  width: 6000px;
   height: 96%;
   position: relative;
   margin: 5 auto;
@@ -27,6 +27,8 @@ body {
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: 15%;
+  overflow-y:hidden; 
+  overflow-x:scroll;
 }
 
 td {
