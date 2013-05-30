@@ -10,9 +10,9 @@
     /Start of checkbox form
     %form
       %table
-        - @cities.in_groups_of(4, false).each do |city_by_4|
+        - @cities.in_groups_of(3, false).each do |city_by_3|
           %tr
-            - city_by_4.each do |city|
+            - city_by_3.each do |city|
               %td
                 %label.check-boxes
                   = check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}"
