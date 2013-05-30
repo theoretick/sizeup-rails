@@ -17,6 +17,11 @@
       = f.label :height
       %br
       = f.number_field :height
+  .field
+    %label
+      = f.label :address
+      %br
+      = f.text_field :address
   .check_boxes
     %label
       = collection_select :building, :city_id, @cities, :id, :name
@@ -30,10 +35,10 @@
 /<%= form_tag import_products_path, multipart: true do %>
 /  <%= file_field_tag :file %>
 /  <%= submit_tag "Import" %>
-/<% end %>         
+/<% end %>
 %h2 Import Buildings 
 = form_tag import_buildings_path, multipart: true do
   = file_field_tag :file
   = submit_tag "Import"
 /end of section containing CSV import 
-    
+

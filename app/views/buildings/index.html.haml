@@ -27,6 +27,7 @@
         %tr
           %th{:scope => "col"} Name
           %th{:scope => "col"} Height
+          %th{:scope => "col"} Address
           %th{:scope => "col"} City
           %th{:scope => "col"}
       %tbody
@@ -34,6 +35,7 @@
           %tr
             %td.buildingname= link_to building.name, building
             %td= building.height
+            %td= building.address
             %td= building.city.name
             %td= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' }
   %br
