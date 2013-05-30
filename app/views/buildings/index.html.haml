@@ -17,10 +17,8 @@
                 %label.checkboxes
                   = check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}"
                   = city.name
-      %br
-      %tr
-        %td{:align => "center", :colspan => "4"}
-          %input.building_btn{type: "submit", value: "Show Selected Cities!"}
+      %div#show_slected_city_btn
+        %input.building_btn{type: "submit", value: "Show Selected Cities!"}
     / Checkbox form ends here!
 
   %table

@@ -50,11 +50,19 @@ div.building_btn {
 #city_select {
   border-bottom: 1px black solid;
   padding: 20px;
+  td {
+    display: inline-block;
+  }
 }
 
 .check_boxes {
   line-height: 2em;
   margin-right: 15px;
+}
+
+// the "show selected buildings" button in the menu
+#show_slected_city_btn {
+  text-align: center;
 }
 
 // displayed building name in table
