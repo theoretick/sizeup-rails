@@ -9,7 +9,7 @@ class City < ActiveRecord::Base
     city_ids= {}
     cities = City.all
     cities.each do |city|
-      city_ids["#{city.id}"] = 1
+      city_ids[city.id.to_s] = 1
     end
     return city_ids
   end
