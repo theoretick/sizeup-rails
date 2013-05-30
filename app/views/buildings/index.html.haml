@@ -14,7 +14,7 @@
           %tr
             - city_by_4.each do |city|
               %td
-                %label.checkboxes
+                %label.check-boxes
                   = check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}"
                   = city.name
       %div#show_slected_city_btn
