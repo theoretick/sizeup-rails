@@ -8,14 +8,22 @@
 City.delete_all
 Building.delete_all
 
-City.create!({name: 'Portland', country: 'USA', id: '1'})
-City.create!({name: 'London', country: 'England', id: '2'})
-City.create!({name: 'Seattle', country: 'USA', id: '3'})
-City.create!({name: 'New York', country: 'USA', id: '4'})
-City.create!({name: 'Paris', country: 'France', id: '5'})
+cities = [{name: 'Portland', country: 'USA', id: '1'},
+          {name: 'London', country: 'England', id: '2'},
+          {name: 'Seattle', country: 'USA', id: '3'},
+          {name: 'New York', country: 'USA', id: '4'},
+          {name: 'Paris', country: 'France', id: '5'}]
 
-Building.create!({name: 'Rose Garden', height: 140, city_id: '1', address: 97227})
-Building.create!({name: 'Big Ben', height: 316, city_id: '2', address: '95032'})
-Building.create!({name: 'Space Needle', height: 604, city_id: '3', address: '11206'})
-Building.create!({name: 'Empire State Building', height: 1454, city_id: '4', address: '90210'})
-Building.create!({name: 'Eiffel Tower', height: 1063, city_id: '5', address: '12345'})
+cities.each do |city|
+  City.create!(city)
+end
+
+buildings = [{name: 'Rose Garden', height: 140, city_id: '1', zipcode: '97227'},
+             {name: 'Big Ben', height: 316, city_id: '2', zipcode: '95032'},
+             {name: 'Space Needle', height: 604, city_id: '3', zipcode: '11206'},
+             {name: 'Empire State Building', height: 1454, city_id: '4', zipcode: '90210'},
+             {name: 'Eiffel Tower', height: 1063, city_id: '5', zipcode: '12345'}]
+
+buildings.each do |building|
+  Building.create!(building)
+end

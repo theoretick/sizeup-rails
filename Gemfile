@@ -25,8 +25,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 
-# Normalize.css is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards.
-gem 'normalize-rails'
+# Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :git => 'git://github.com/anjlab/bootstrap-rails.git',
+                              :branch => '3.0.0'
 
 # Haml (HTML abstraction markup language) is based on one primary principle: markup should be beautiful.
 gem 'haml-rails', '>=0.3.4', :group => :development

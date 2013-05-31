@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require normalize-rails
+ *= require twitter/bootstrap
  *= require_tree .
  */
 
@@ -27,7 +27,7 @@ body {
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: 15%;
-  overflow-y:hidden; 
+  overflow-y:hidden;
   overflow-x:scroll;
 }
 

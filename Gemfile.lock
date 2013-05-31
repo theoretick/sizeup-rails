@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/anjlab/bootstrap-rails.git
+  revision: a638ef3c1cceba5da48524738f3811c7f8ebbb75
+  branch: 3.0.0
+  specs:
+    anjlab-bootstrap-rails (3.0.0.0.alpha1)
+      railties (>= 3.0)
+      sass (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,7 +75,6 @@ GEM
     mime-types (1.23)
     minitest (4.7.4)
     multi_json (1.7.3)
-    normalize-rails (2.1.1)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -122,13 +130,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anjlab-bootstrap-rails!
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0.beta1)
   haml-rails (>= 0.3.4)
   jbuilder (~> 1.0.1)
   jquery-rails
-  normalize-rails
   rails (= 4.0.0.beta1)
   sass-rails (~> 4.0.0.beta1)
   sqlite3
