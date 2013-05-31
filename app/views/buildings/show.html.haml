@@ -10,7 +10,7 @@
   = @building.address
 %p
   %strong City:
-  = City.find_by_id(@building.city_id).name
+  = @building.city.name
 = link_to 'Edit', edit_building_path(@building)
 |
 = link_to 'Back', buildings_path
