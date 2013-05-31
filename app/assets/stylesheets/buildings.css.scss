@@ -123,6 +123,11 @@ table {
 //graceland div height
 .graceland {
   height: 10px;
+  text-align: center;
+  display: inline;
+  &:before {
+    content: "DTG: ";
+  }
 }
 
 // class for styling individual building bar graphics
