@@ -15,10 +15,10 @@
         %td= city.country
         %td.buildings
           - city.buildings.each do |building|
-            \- #{link_to building.name, building_path(building)}
-            %br/
+            = link_to building.name, building_path(building)
+            %br
         %td= link_to 'Show', city
         %td= link_to 'Edit', edit_city_path(city)
         %td= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
+%br
 = link_to 'New City', new_city_path
