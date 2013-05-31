@@ -6,7 +6,6 @@ class BuildingsController < ApplicationController
   def index
     @buildings = Building.all
     @cities = City.all
-    @graceland_zip = City.graceland_zip
     heights = []
 
     # minus 130px for border-top plus building footer name
