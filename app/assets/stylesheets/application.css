@@ -19,7 +19,6 @@
 }
 
 body {
-  width: 6000px;
   height: 96%;
   position: relative;
   margin: 5 auto;
@@ -35,3 +34,34 @@ td {
   padding: 5px;
   border-top: 1px solid #ddd;
 }
+
+/*
+#flying_bird {
+    background-image: url('flying_bird.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    z-index: -10;
+    -webkit-animation-name: flying_bird_animation;
+    -webkit-animation-duration: 60s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-play-state: running;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes flying_bird_animation {
+  0% {
+    -webkit-transform: translate(6100px, 0px);
+    transform: translate(6100px, 0px);
+    }
+  50% {
+    -webkit-transform: translate(2000px, 100px);
+    transform: translate(2000px, 100px);
+    }
+  100% {
+    -webkit-transform: translate(-100px, 0px);
+    transform: translate(-100px, 0px);
+    }
+}
+*/
