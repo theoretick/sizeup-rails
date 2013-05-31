@@ -1,5 +1,5 @@
-name,height,city_id
-Building11,250,1
-Building12,252,1
-Building13,254,1
-Building14,256,1
+name,height,city_id,zipcode
+Building11,250,1,95032
+Building12,252,1,97203
+Building13,254,1,11206
+Building14,256,1,90210
