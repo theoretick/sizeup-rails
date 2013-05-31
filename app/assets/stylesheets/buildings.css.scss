@@ -85,6 +85,12 @@ table {
   height: 70%;
 }
 
+#buildings_display_table{
+  th {
+    text-align: center;
+  }
+}
+
 #wrapper {
   padding-left: 430px;
   display: inline-block;
