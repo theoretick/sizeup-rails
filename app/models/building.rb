@@ -1,6 +1,7 @@
 class Building < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :height, presence: true, numericality: true
+  validates :zipcode, presence: true, numericality: true
 	belongs_to :city
 
   # method for CSV Import, take a file variable (csv file object)
