@@ -1,7 +1,7 @@
 / building graphic height generator
 %section.building
   %p= building.name
-  .graceland= controller.distance_calculator(building.zipcode, 38116)
+  .graceland= controller.distance_calculator(building.zipcode, @graceland_zip)
   - if controller.gargoyle_ify(building)
     .gargoyle
   .building_bar{:style => "height: #{building.height * @adjusted_height}px"}

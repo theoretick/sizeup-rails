@@ -13,4 +13,8 @@ class City < ActiveRecord::Base
     end
     return city_ids
   end
+
+  def self.graceland_zip
+    "38116"
+  end
 end

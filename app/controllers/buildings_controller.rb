@@ -6,6 +6,7 @@ class BuildingsController < ApplicationController
   def index
     @buildings = Building.all
     @cities = City.all
+    @graceland_zip = City.graceland_zip
     heights = []
 
     # minus 130px for border-top plus building footer name
@@ -34,13 +35,13 @@ class BuildingsController < ApplicationController
     parsed_response = ActiveSupport::JSON.decode(response)
     searched_response = parsed_response["rows"][0]["elements"][0]["distance"]["text"]
   end
-  
+
   # Method to handle CSV Imports, from CSV Import RailsCast
   def import
     Building.import(params[:file])
     redirect_to root_url, notice: "Buildings imported."
-  end 
-  
+  end
+
   # Method to add a gargoyle to the top of your building
   def gargoyle_ify(building)
     building.height >= 300
