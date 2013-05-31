@@ -14,3 +14,6 @@ class Building < ActiveRecord::Base
 	  end
 	end
 end
+
+
+#n33d b33r
