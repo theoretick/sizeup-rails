@@ -1,5 +1,6 @@
 class BuildingsController < ApplicationController
   before_action :set_building, only: [:show, :edit, :update, :destroy]
+  require "net/http"
   # GET /buildings
   # GET /buildings.json
   def index
@@ -26,6 +27,14 @@ class BuildingsController < ApplicationController
     @buildings = @buildings.order("height").where(city_id: @selected_cities.keys)
   end
 
+  # Method to make Distance to Graceland call
+  def distance_calculator(from, to)
+    uri = URI("http://maps.googleapis.com/maps/api/distancematrix/json?origins=#{from}&destinations=#{to}&mode=bicycling&sensor=false")
+    response = Net::HTTP.get(uri)
+    parsed_response = ActiveSupport::JSON.decode(response)
+    searched_response = parsed_response["rows"][0]["elements"][0]["distance"]["text"]
+  end
+  
   # Method to handle CSV Imports, from CSV Import RailsCast
   def import
     Building.import(params[:file])
