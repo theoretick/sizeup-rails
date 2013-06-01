@@ -1,44 +1,46 @@
-= form_for(@building) do |f|
-  - if @building.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@building.errors.count, "error")
-        prohibited this building from being saved:
-      %ul
-        - @building.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    %label
-      = f.label :name
-      %br
-      = f.text_field :name
-  .field
-    %label
-      = f.label :height
-      %br
-      = f.number_field :height
-  .field
-    %label
-      = f.label :zipcode
-      %br
-      = f.text_field :zipcode
-  .check_boxes
-    %label
-      = collection_select :building, :city_id, @cities, :id, :name
-  .city_link
-    = link_to "Create a new city", new_city_path
-  .actions
-    = f.submit
+.row-fluid
+  .span6
+    = form_for(@building) do |f|
+      - if @building.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@building.errors.count, "error")
+            prohibited this building from being saved:
+          %ul
+            - @building.errors.full_messages.each do |msg|
+              %li= msg
+      .field
+        %label
+          = f.label :name
+          %br
+          = f.text_field :name
+      .field
+        %label
+          = f.label :height
+          %br
+          = f.number_field :height
+      .field
+        %label
+          = f.label :zipcode
+          %br
+          = f.text_field :zipcode
+      .check_boxes
+        %label
+          = collection_select :building, :city_id, @cities, :id, :name
+      .city_link
+        = link_to "Create a new city", new_city_path
+      .actions
+        = f.submit
 
-/section containing csv import method call, This code refactored from CSV Import RailsCast
-/<h2>Import Products</h2>
-/<%= form_tag import_products_path, multipart: true do %>
-/  <%= file_field_tag :file %>
-/  <%= submit_tag "Import" %>
-/<% end %>
-%h2 Import Buildings 
-= form_tag import_buildings_path, multipart: true do
-  = file_field_tag :file
-  = submit_tag "Import"
-/end of section containing CSV import 
-
+    /section containing csv import method call, This code refactored from CSV Import RailsCast
+    /<h2>Import Products</h2>
+    /<%= form_tag import_products_path, multipart: true do %>
+    /  <%= file_field_tag :file %>
+    /  <%= submit_tag "Import" %>
+    /<% end %>
+  .span6
+    %h2 Import Buildings
+    = form_tag import_buildings_path, multipart: true do
+      = file_field_tag :file
+      = submit_tag "Import"
+    /end of section containing CSV import
