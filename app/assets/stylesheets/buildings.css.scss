@@ -9,8 +9,8 @@
   background: rgba(192, 192, 192, 0.6);
   margin: 3px;
   position: absolute;
-  top: 0;
-  z-index: 10;
+  top: 10%;
+  z-index: 9;
   width: 400px;
   box-shadow: 1px 1px 2px 1px dimgrey;
   height: 100%;
@@ -89,6 +89,10 @@ table {
   th {
     text-align: center;
   }
+}
+
+ul.nav li {
+  z-index: 10;
 }
 
 #wrapper {

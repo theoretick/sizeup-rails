@@ -1,12 +1,16 @@
+/ Navigation bar
+%ul.nav.nav-pills
+  %li#active
+    = link_to 'Home', buildings_path
+  %li
+    = link_to 'New Building', new_building_path
+  %li
+    = link_to 'Edit Cities', cities_path
+/ End of navigation bar
 %section#buildingtable
   / building table section
-  %section#links
-    %button.building_btn= link_to 'New Building', new_building_path
-    .building_btn
-    %button.building_btn= link_to 'Cities', cities_path
-  / end of link buildingtable buttons
   %section#city_select
-    /Start of checkbox form
+    / Start of checkbox form
     %form
       %table
         - @cities.in_groups_of(3, false).each do |city_by_3|
