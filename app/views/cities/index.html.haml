@@ -17,8 +17,8 @@
           - city.buildings.each do |building|
             = link_to building.name, building_path(building)
             %br
-        %td= link_to 'Show', city
+        %td= link_to 'Details', city
         %td= link_to 'Edit', edit_city_path(city)
-        %td= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'x', city, method: :delete, data: { confirm: "Permanently delete #{city.name} and all associated buildings?" }
 %br
-= link_to 'New City', new_city_path
+= link_to 'Add New City', new_city_path

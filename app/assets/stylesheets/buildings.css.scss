@@ -53,7 +53,7 @@ div.building_btn {
   min-width: 2px;
 }
 
-#city_select {
+#city-select {
   border-bottom: 1px black solid;
   padding: 20px;
   td {
@@ -61,9 +61,15 @@ div.building_btn {
   }
 }
 
-.check-boxes {
+.select-box {
   line-height: 2em;
   margin-right: 15px;
+  float: left;
+  font-weight: bold;
+}
+
+.city-link {
+  font-weight: bold;
 }
 
 // the "show selected buildings" button in the menu
@@ -99,6 +105,11 @@ table {
   vertical-align: bottom;
   position: absolute;
   bottom: 0;
+}
+
+.building-form {
+  position: absolute;
+  left: 2%;
 }
 
 

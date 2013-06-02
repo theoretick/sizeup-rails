@@ -1,6 +1,6 @@
 %section#buildingtable
   / building table section
-  %section#city_select
+  %section#city-select
     / Start of checkbox form
     %form
       %table
@@ -12,7 +12,7 @@
                   = check_box_tag "view[#{city.id}]", 1, @selected_cities.include?("#{city.id}"), id: "view_#{city.name}"
                   = city.name
       %div#show_slected_city_btn
-        %input.building_btn{type: "submit", value: "Show Selected Cities!"}
+        %input.building_btn{type: "submit", value: "Update Cities!"}
     / Checkbox form ends here!
 
   %div#table_div
@@ -31,7 +31,7 @@
             %td= building.height
             %td= building.zipcode
             %td= building.city.name
-            %td= link_to 'x', building, method: :delete, data: { confirm: 'Are you sure?' }
+            %td= link_to 'x', building, method: :delete, data: { confirm: "Permanently delete #{building.name}?" }
   %br
 / end of building table section
 %section#wrapper
