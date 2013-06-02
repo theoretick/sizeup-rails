@@ -41,6 +41,10 @@ ul.nav-pills a {
   font-size: 1.3em;
 }
 
+td.delete-entry a {
+  color: #c91000;
+}
+
 /*
 #flying_bird {
     background-image: url('flying_bird.gif');

@@ -19,6 +19,6 @@
             %br
         %td= link_to 'Details', city
         %td= link_to 'Edit', edit_city_path(city)
-        %td= link_to 'x', city, method: :delete, data: { confirm: "Permanently delete #{city.name} and all associated buildings?" }
+        %td.delete-entry= link_to 'x', city, method: :delete, data: { confirm: "Permanently delete #{city.name} and all associated buildings?" }
 %br
 = link_to 'Add New City', new_city_path

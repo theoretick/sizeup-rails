@@ -31,7 +31,7 @@
             %td= building.height
             %td= building.zipcode
             %td= building.city.name
-            %td= link_to 'x', building, method: :delete, data: { confirm: "Permanently delete #{building.name}?" }
+            %td.delete-entry= link_to 'x', building, method: :delete, data: { confirm: "Permanently delete #{building.name}?" }
   %br
 / end of building table section
 %section#wrapper
