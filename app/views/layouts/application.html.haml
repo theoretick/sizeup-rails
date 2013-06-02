@@ -7,6 +7,15 @@
     = csrf_meta_tags
   %body
     .container-fluid
-      .row
-        /#flying_bird
-        = yield
+      / Navigation bar
+      %ul.nav.nav-pills
+        %li
+          = link_to 'Home', buildings_path
+        %li
+          = link_to 'Cities', cities_path
+        %li
+          = link_to 'Add New Building', new_building_path
+      / End of navigation bar
+    .row
+      /#flying_bird
+      = yield

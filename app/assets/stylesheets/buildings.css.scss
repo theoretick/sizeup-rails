@@ -9,7 +9,7 @@
   background: rgba(192, 192, 192, 0.6);
   margin: 3px;
   position: absolute;
-  top: 10%;
+  top: 11%;
   z-index: 9;
   width: 400px;
   box-shadow: 1px 1px 2px 1px dimgrey;
@@ -17,12 +17,14 @@
   overflow: visible;
 }
 
+/*
 // container menu buttons
 #links {
   display: block;
   padding: 5px;
   text-align: center;
 }
+*/
 
 .building_btn {
   display: inline-block;
@@ -89,10 +91,6 @@ table {
   th {
     text-align: center;
   }
-}
-
-ul.nav li {
-  z-index: 10;
 }
 
 #wrapper {

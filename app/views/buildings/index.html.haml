@@ -1,12 +1,3 @@
-/ Navigation bar
-%ul.nav.nav-pills
-  %li#active
-    = link_to 'Home', buildings_path
-  %li
-    = link_to 'New Building', new_building_path
-  %li
-    = link_to 'Edit Cities', cities_path
-/ End of navigation bar
 %section#buildingtable
   / building table section
   %section#city_select
@@ -40,7 +31,7 @@
             %td= building.height
             %td= building.zipcode
             %td= building.city.name
-            %td= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' }
+            %td= link_to 'x', building, method: :delete, data: { confirm: 'Are you sure?' }
   %br
 / end of building table section
 %section#wrapper
