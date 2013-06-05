@@ -34,6 +34,6 @@
             %td.delete-entry= link_to 'x', building, method: :delete, data: { confirm: "Permanently delete #{building.name}?" }
   %br
 / end of building table section
-%section#wrapper
+%section#wrapper{ :style => "width: #{@buildings.count * 120}px;" }
   / wrapper for building graphics
   = render partial: 'building', collection: @buildings
