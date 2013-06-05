@@ -11,6 +11,8 @@
 %p
   %strong City:
   = @building.city.name
+%p
+  .graceland= controller.distance_calculator(@building.zipcode, GRACELAND_ZIP)
 = link_to 'Edit', edit_building_path(@building)
 |
 = link_to 'Back', buildings_path
